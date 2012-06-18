@@ -3,11 +3,16 @@
   "name": "Session1",
   "description": "Working session",
   "version": "0.0.0",
+  "scripts": {
+    "start": "node app"
+  },
   "repository": {
     "url": "git:git@github.com:yannikmethot/Session1.git"
   },
   "dependencies": {
-    "express": "~2.5.10"
+    "express": "3.0.0beta3",
+    "jade": "*",
+    "mongolian": "~0.1.18"
   },
   "devDependencies": {},
   "optionalDependencies": {},

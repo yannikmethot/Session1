@@ -5,7 +5,8 @@ Note session de travail Node #1
 - Creation du repo sur github
 - Creation du package.json (npm init) dans le dossier de travail
 - Installation d'expressJS ( npm install express --save )
+    - Documentation en ligne ( http://expressjs.com/guide.html )
 - Installation de Webstorm ( console pour debugger du NODE )
-		- Shortcut ( CTRL-ALT-SHIT-N - Search method )
-		
-- Générer clefs SSH dans git Bash (https://help.github.com/articles/generating-ssh-keys#platform-windows)
+	- Shortcut ( CTRL-ALT-SHIT-N - Search method )
+- Generer clefs SSH dans git Bash
+    - (https://help.github.com/articles/generating-ssh-keys#platform-windows)
