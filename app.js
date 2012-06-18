@@ -4,15 +4,34 @@
  */
 
 var express = require('express');
-var routes = require('./routes');
 var http = require('http');
 var Mongolian = require("mongolian");
-var mongolian = new Mongolian("mongodb://yannik.methot@nurun.com:alloallo@staff.mongohq.com:10012");
+var mongolian = new Mongolian("staff.mongohq.com:10012");
+var app = express();
+
+
 
 // Get database
 var db = mongolian.db("Session1");
+db.auth("yannik.methot", "alloallo");
 
-var app = express();
+// Get some collections
+var posts = db.collection("posts")
+app.posts = posts;
+
+var routes = require('./routes')(app);
+
+// Insert some data
+posts.insert({
+    pageId: "hallo",
+    title: "Hallo",
+    created: new Date,
+    body: "Welcome to my new blog!"
+})
+
+
+
+
 
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
