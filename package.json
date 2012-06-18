@@ -1,0 +1,17 @@
+{
+  "author": "Yannik Methot <yannik.methot@nurun.com>",
+  "name": "Session1",
+  "description": "Working session",
+  "version": "0.0.0",
+  "repository": {
+    "url": "git:git@github.com:yannikmethot/Session1.git"
+  },
+  "dependencies": {
+    "express": "~2.5.10"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}

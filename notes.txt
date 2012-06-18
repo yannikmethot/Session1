@@ -1,0 +1,11 @@
+Note session de travail Node #1
+
+- Installation de node ( executable )
+- Creattion du dossier de travail
+- Creation du repo sur github
+- Creation du package.json (npm init) dans le dossier de travail
+- Installation d'expressJS ( npm install express --save )
+- Installation de Webstorm ( console pour debugger du NODE )
+		- Shortcut ( CTRL-ALT-SHIT-N - Search method )
+		
+- Générer clefs SSH dans git Bash (https://help.github.com/articles/generating-ssh-keys#platform-windows)
