@@ -1,6 +1,48 @@
 extends layout
 
 block content
-  h1= title
-  div= post.body
-  p Welcome to #{title}
+	h1= title
+	div= post.title
+	div= postdeux.title
+	div= post.created
+	div= post.body
+	p Welcome to #{title}
+		p Nb of posts : #{postNum}
+		br
+		form(method='get',action='/')
+			div
+				span Insert:
+				br
+				label(for='pageId') pageId
+				input(name='pageId',type='text')
+				br
+				label(for='title') title
+				input(name='title',type='text')
+				br
+				label(for='body') body
+				input(name='body',type='text')
+				br
+				input(type='submit')
+		br 
+		br
+		form(method='get',action='/post')
+			select(name='post',onchange='this.form.submit();') 
+				each sposts in posts
+					option(value=sposts.pageId)= sposts.title
+		br
+		.posts		
+			each spost in posts
+				div
+					.title #{spost.title}
+					div.created #{spost.created}
+					div.body #{spost.body}
+		br
+		br
+		br
+		br
+		.shares
+			each share in shares
+				.name #{share.name}
+				.tag
+				.price(id=share.name) #{share.price}
+				

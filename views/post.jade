@@ -1,0 +1,14 @@
+extends layout
+
+block content
+	h1 Test post output : #{thepost}
+	div= post.title
+	div= post.created
+	div= post.body
+	form(method='get',action='/post')
+		select(onchange='this.form.submit();') 
+			each sposts in posts
+				option(value=sposts.pageId)= sposts.title
+	br
+	
+	

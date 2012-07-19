@@ -6,32 +6,23 @@
 var express = require('express');
 var http = require('http');
 var Mongolian = require("mongolian");
-var mongolian = new Mongolian("staff.mongohq.com:10012");
+var mongolian = new Mongolian("staff.mongohq.com:10013");
 var app = express();
 
 
-
 // Get database
-var db = mongolian.db("Session1");
-db.auth("yannik.methot", "alloallo");
+bd = mongolian.db("sessiondeux");
 
+bd.auth("etiennetest", "12345678");
+
+app.bd = bd;
 // Get some collections
-var posts = db.collection("posts")
+var posts = bd.collection("posts");
+var postsdeux = bd.collection("collection");
 app.posts = posts;
+app.postsdeux = postsdeux;
 
 var routes = require('./routes')(app);
-
-// Insert some data
-posts.insert({
-    pageId: "hallo",
-    title: "Hallo",
-    created: new Date,
-    body: "Welcome to my new blog!"
-})
-
-
-
-
 
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
@@ -50,6 +41,7 @@ app.configure('development', function(){
 });
 
 app.get('/', routes.index);
+app.get('/post', routes.post);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
